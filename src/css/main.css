@@ -1,0 +1,308 @@
+/*
+=============== 
+Variables
+===============
+*/
+/* dark shades of primary color*/
+/* primary/main color */
+/* lighter shades of primary color */
+/* darkest grey - used for headings */
+/* grey used for paragraphs */
+/*
+=============== 
+Global Styles
+===============
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  font-size: 1rem;
+}
+
+i {
+  pointer-events: none;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/*  global classes */
+body {
+  background-color: #ebf7ff;
+}
+
+.App {
+  width: 90%;
+  max-width: 1170px;
+  margin: auto;
+  padding: 2rem 0 1rem;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "budget-form items items" "expense-form transactions transactions";
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  row-gap: 3rem;
+}
+
+.form {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border: 2px solid green;
+  border-radius: 0.25rem;
+}
+
+.budget-form {
+  grid-area: "budget-form";
+}
+
+.label {
+  margin-bottom: .5rem;
+  font-size: 1.1rem;
+}
+
+input {
+  padding: .5rem;
+  font-size: 1rem;
+  display: block;
+  border-radius: 0.25rem;
+  border: 1px solid green;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+input:focus {
+  outline-color: green;
+}
+
+.btn {
+  padding: .5rem .75rem;
+  border: 1px solid green;
+  border-radius: 0.25rem;
+  color: green;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  margin-left: auto;
+  display: block;
+}
+
+.btn:hover {
+  background-color: green;
+  color: #e6e6e6;
+}
+
+.items {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: items;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  text-align: center;
+}
+
+.item-title {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.icon {
+  font-size: 3rem;
+  fill: green;
+}
+
+.item-money {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.expense-form {
+  grid-area: "expense-form";
+  border-color: #bb2525;
+}
+
+.expense-form input {
+  border-color: #bb2525;
+}
+
+.expense-form input:focus {
+  outline-color: #bb2525;
+}
+
+.expense-form .btn {
+  color: #bb2525;
+  border-color: #bb2525;
+}
+
+.expense-form .btn:hover {
+  background-color: #bb2525;
+  color: #e6e6e6;
+}
+
+.transactions {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: transactions;
+}
+
+.transaction-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 1rem;
+}
+
+.transaction-grid p {
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin: 0;
+}
+
+.transaction-grid .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.transaction-grid .icons button {
+  margin: 0 0.3rem;
+  width: 1.2rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #f88502;
+}
+
+.transaction-grid .icons button svg {
+  font-size: 1.2rem;
+}
+
+.transaction-grid .icons .delete {
+  background-color: red;
+}
+
+.feedback {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-color: #f8d7da;
+  color: #850a14;
+  padding-top: 1rem;
+  margin-bottom: .5rem;
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .grid {
+        grid-template-areas: "budget-form" "items" "expense-form" "transactions";
+  }
+  .items {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+  .items .item {
+    border-bottom: 1px solid;
+  }
+}
+/*# sourceMappingURL=main.css.map */
